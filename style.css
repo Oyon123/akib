@@ -176,7 +176,7 @@ img {
 @media screen and (max-width: 767px) {
   .nav__menu {
     position: fixed;
-    bottom: 0;
+    bottom: -100%;
     left: 0;
     width: 100%;
     background-color: #fbfbfe;
@@ -215,9 +215,15 @@ img {
   bottom: .5rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #6e57e0;
+  color: #242329;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav__close:hover {
-  color: red;
+  color: #5a43cb;
+}
+
+/*============== Show Nav ============*/
+.show-menu {
+  bottom: 0;
 }
