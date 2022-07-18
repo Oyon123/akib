@@ -1,229 +1,47 @@
-:root {
-    --header-height: 3rem;
-
-    /*========== Colors ==========*/
-    /* Change favorite color */
-    --hue-color: 250; /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
-
-    /* HSL color mode */
-    --first-color: hsl(var(--hue-color), 69%, 61%);
-    --first-color-second: hsl(var(--hue-color), 69%, 61%);
-    --first-color-alt: hsl(var(--hue-color), 57%, 53%);
-    --first-color-lighter: hsl(var(--hue-color), 92%, 85%);
-    --title-color: hsl(var(--hue-color), 8%, 15%);
-    --text-color: hsl(var(--hue-color), 8%, 45%);
-    --text-color-light: hsl(var(--hue-color), 8%, 65%);
-    --input-color: hsl(var(--hue-color), 70%, 96%);
-    --body-color: hsl(var(--hue-color), 60%, 99%);
-    --container-color: #fff;
-    --scroll-bar-color: hsl(var(--hue-color), 12%, 90%);
-    --scroll-thumb-color: hsl(var(--hue-color), 12%, 80%);
-
-    /*========== Font and typography ==========*/
-    --body-font: 'Poppins', sans-serif;
-
-    /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
-    --big-font-size: 2rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
-    --h3-font-size: 1.125rem;
-    --normal-font-size: .938rem;
-    --small-font-size: .813rem;
-    --smaller-font-size: .75rem;
-
-    /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
-
-    /*========== Margenes Bottom ==========*/
-    /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
-    --mb-0-25: .25rem;
-    --mb-0-5: .5rem;
-    --mb-0-75: .75rem;
-    --mb-1: 1rem;
-    --mb-1-5: 1.5rem;
-    --mb-2: 2rem;
-    --mb-2-5: 2.5rem;
-    --mb-3: 3rem;
-
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
-    --z-modal: 1000;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
 }
-
-/* Font size for large devices */
-@media screen and (min-width: 968px) {
-    :root {
-        --big-font-size: 3rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
-        --small-font-size: .875rem;
-        --smaller-font-size: .813rem;
-    }
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(148,115,231);
+    background: linear-gradient(90deg, rgba(148,115,231,1) 15%, rgba(115,168,231,1) 45%, rgba(212,184,223,1) 75%);
 }
-
-/*========== Variables Dark theme ==========*/
-
- 
-/*========== Button Dark/Light ==========*/
-
-
-/*==================== BASE ====================*/
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.nav-links{
+    flex: 1;
+    text-align: center;
 }
-
-html {
-  scroll-behavior: smooth;
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 1px 60px;
+    position: relative;
 }
-
-body {
-  margin: 0 0 3rem 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.938rem;
-  background-color: #fbfbfe;
-  color: #6d6a7c;
+.nav-links ul li i{
+    display: none;
 }
-
-h1,
-h2,
-h3,
-h4 {
-  color: #242329;
-  font-weight: 600;
+.nav-links ul li a{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
 }
-
-ul {
-  list-style: none;
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #68cfc7;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
 }
-
-a {
-  text-decoration: none;
-  -webkit-tap-highlight-color: transparent;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-/*==================== REUSABLE CSS CLASSES ====================*/
-.section {
-  padding: 2rem 0 4rem;
-}
-
-.section__title {
-  font-size: 1.5rem;
-  color: #242329;
-}
-
-.section__subtitle {
-  display: block;
-  font-size: 0.813rem;
-  margin-bottom: 3rem;
-}
-
-.section__title,
-.section__subtitle {
-  text-align: center;
-}
-
-/*==================== LAYOUT ====================*/
-.container {
-  max-width: 768px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
-}
-
-.grid {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.header {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 100;
-  background-color: #fbfbfe;
-}
-
-/*==================== NAV ====================*/
-.nav {
-  max-width: 968px;
-  height: 3rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav .nav__logo,
-.nav .nav__toggle {
-  color: #242329;
-  font-weight: 500;
-}
-
-.nav .nav__logo:hover {
-  color: #6e57e0;
-}
-
-@media screen and (max-width: 767px) {
-  .nav__menu {
-    position: fixed;
-    bottom: -100%;
-    left: 0;
+.nav-links ul li:hover::after{
     width: 100%;
-    background-color: #fbfbfe;
-    padding: 2rem 1.5rem 4rem;
-    box-shadow: 0 -1px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 1.5rem 1.5rem 0 0;
-    transition: .3s;
-  }
 }
-
-.nav__list {
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.nav__link {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: 0.813rem;
-  color: #242329;
-  font-weight: 500;
-}
-
-.nav__link:hover {
-  color: #6e57e0;
-}
-
-.nav__link .nav__icon {
-  font-size: 1.2rem;
-}
-
-.nav__close {
-  position: absolute;
-  right: 1.3rem;
-  bottom: .5rem;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #242329;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.nav__close:hover {
-  color: #5a43cb;
-}
-
-/*============== Show Nav ============*/
-.show-menu {
-  bottom: 0;
+nav .fas{
+    display: none;
 }
