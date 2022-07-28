@@ -2,15 +2,17 @@
 /*==================== MENU SHOW Y HIDDEN ====================*/
 var navMenu = document.getElementById('nav-menu'),
 navToggle = document.getElementById('nav-toggle'),
-navClose = document.getElementById('nav-close'),
-linkClose = document.getElementById('nav-link');
+navClose = document.getElementById('nav-close');
 
 /*===== MENU SHOW =====*/
 navToggle.addEventListener('click', function(){
   navMenu.classList.add('show-menu');
 })
 /*===== MENU HIDDEN =====*/
-navMenu.addEventListener('click', function() {
+navClose.addEventListener('click', function() {
+    navMenu.classList.remove('show-menu');
+  })
+  navMenu.addEventListener('click', function() {
     navMenu.classList.remove('show-menu');
   })
 /* Validate if constant exists */
