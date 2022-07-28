@@ -1,19 +1,80 @@
 /*==================== GOOGLE FONTS ====================*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
 /*==================== VARIABLES CSS ====================*/
+$header-height: 3rem;
+
 /*========== Colors ==========*/
 /* Change favorite color */
+$hue-color: 250;
 /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
+
 /* HSL color mode */
+$first-color: hsl($hue-color, 69%, 61%);
+$first-color-second: hsl($hue-color, 69%, 61%);
+$first-color-alt: hsl($hue-color, 57%, 53%);
+$first-color-lighter: hsl($hue-color, 92%, 85%);
+$title-color: hsl($hue-color, 8%, 15%);
+$text-color: hsl($hue-color, 8%, 45%);
+$text-color-light: hsl($hue-color, 8%, 65%);
+$input-color: hsl($hue-color, 70%, 96%);
+$body-color: hsl($hue-color, 60%, 99%);
+$container-color: #fff;
+$scroll-bar-color: hsl($hue-color, 12%, 90%);
+$scroll-thumb-color: hsl($hue-color, 12%, 80%);
+
 /*========== Font and typography ==========*/
+$body-font: 'Poppins',
+sans-serif;
+
 /* .5rem = 8px, 1rem = 16px, 1.5rem = 24px ... */
+$big-font-size: 2rem;
+$h1-font-size: 1.5rem;
+$h2-font-size: 1.25rem;
+$h3-font-size: 1.125rem;
+$normal-font-size: .938rem;
+$small-font-size: .813rem;
+$smaller-font-size: .75rem;
+
 /*========== Font weight ==========*/
+$font-medium: 500;
+$font-semi-bold: 600;
+
 /*========== Margenes Bottom ==========*/
 /* .25rem = 4px, .5rem = 8px, .75rem = 12px ... */
+$mb-0-25: .25rem;
+$mb-0-5: .5rem;
+$mb-0-75: .75rem;
+$mb-1: 1rem;
+$mb-1-5: 1.5rem;
+$mb-2: 2rem;
+$mb-2-5: 2.5rem;
+$mb-3: 3rem;
+
 /*========== z index ==========*/
+$z-tooltip: 10;
+$z-fixed: 100;
+$z-modal: 1000;
+
+
 /* Font size for large devices */
+@media screen and (min-width: 968px) {
+  $big-font-size: 3rem;
+  $h1-font-size: 2.25rem;
+  $h2-font-size: 1.5rem;
+  $h3-font-size: 1.25rem;
+  $normal-font-size: 1rem;
+  $small-font-size: .875rem;
+  $smaller-font-size: .813rem;
+
+}
+
 /*========== Variables Dark theme ==========*/
+
+
 /*========== Button Dark/Light ==========*/
+
+
 /*==================== BASE ====================*/
 * {
   box-sizing: border-box;
@@ -27,19 +88,19 @@ html {
 }
 
 body {
-  margin: 0 0 3rem 0;
-  font-family: "Poppins", sans-serif;
-  font-size: 0.938rem;
-  background-color: hsl(250deg, 60%, 99%);
-  color: hsl(250deg, 8%, 45%);
+  margin: 0 0 $header-height 0;
+  font-family: $body-font;
+  font-size: $normal-font-size;
+  background-color: $body-color;
+  color: $text-color;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  color: hsl(250deg, 8%, 15%);
-  font-weight: 600;
+  color: $title-color;
+  font-weight: $font-semi-bold;
 }
 
 ul {
@@ -57,18 +118,18 @@ img {
 
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
-  padding: 2rem 0 4rem;
+  padding: 2rem 0 4rem;//changeed: 2rem 0 4rem
 }
 
 .section__title {
-  font-size: 1.5rem;
-  color: hsl(250deg, 8%, 15%);
+  font-size: $h1-font-size;
+  color: $title-color;
 }
 
 .section__subtitle {
   display: block;
-  font-size: 0.813rem;
-  margin-bottom: 3rem;
+  font-size: $small-font-size;
+  margin-bottom: $mb-3;
 }
 
 .section__title,
@@ -79,8 +140,8 @@ img {
 /*==================== LAYOUT ====================*/
 .container {
   max-width: 768px;
-  margin-left: 1.5rem;
-  margin-right: 1.5rem;
+  margin-left: $mb-1-5;
+  margin-right: $mb-1-5;
 }
 
 .grid {
@@ -93,14 +154,14 @@ img {
   position: fixed;
   bottom: 0;
   left: 0;
-  z-index: 100;
-  background-color: hsl(250deg, 60%, 99%);
+  z-index: $z-fixed;
+  background-color: $body-color;
 }
 
 /*==================== NAV ====================*/
 .nav {
   max-width: 968px;
-  height: 3rem;
+  height: $header-height;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,12 +169,12 @@ img {
 
 .nav__logo,
 .nav__toggle {
-  color: hsl(250deg, 8%, 15%);
-  font-weight: 500;
+  color: $title-color;
+  font-weight: $font-medium;
 }
 
 .nav__logo:hover {
-  color: hsl(250deg, 69%, 61%);
+  color: $first-color;
 }
 
 .nav__toggle {
@@ -122,24 +183,25 @@ img {
 }
 
 .nav__toggle:hover {
-  color: hsl(250deg, 69%, 61%);
+  color: $first-color;
 }
 
-@media screen and (max-width: 767px) {
-  .nav__menu {
+@media screen and (max-width:767px) {
+ .nav__menu {
     position: fixed;
     bottom: -100%;
     left: 0;
     width: 100%;
-    background-color: hsl(250deg, 60%, 99%);
+    background-color: $body-color;
     padding: 2rem 1.5rem 4rem;
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px -2px 4px rgba($color: #000000, $alpha: .1);
     border-radius: 1.5rem 1.5rem 0 0;
-    transition: 0.3s;
+    transition: .3s;
   }
 }
+
 .nav__list {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3,1fr);
   gap: 2em;
 }
 
@@ -147,150 +209,186 @@ img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 0.813rem;
-  color: hsl(250deg, 8%, 15%);
-  font-weight: 500;
-}
-.nav__link:hover {
-  color: hsl(250deg, 69%, 61%);
-}
-.nav__link .nav__icon {
-  font-size: 1.2rem;
+  font-size: $small-font-size;
+  color: $title-color;
+  font-weight: $font-medium;
+  
+  &:hover{
+    color: $first-color;
+  }
+ .nav__icon{
+   font-size: 1.2rem;
+ }
 }
 
-.nav__close {
+.nav__close{
   position: absolute;
   right: 1.3rem;
-  bottom: 0.5rem;
+  bottom: .5rem;
   font-size: 1.5rem;
   cursor: pointer;
-  color: hsl(250deg, 69%, 61%);
+  color: $first-color;
+  
+  &:hover{
+    color: $first-color-alt;
+  }
 }
-.nav__close:hover {
-  color: hsl(250deg, 57%, 53%);
-}
-
 /* show menu */
-.show-menu {
+.show-menu{
   bottom: 0;
 }
 
 /* Active link */
+
+
 /* Change background header */
+
+
 /*==================== HOME ====================*/
-.home__container {
-  gap: 1rem;
+.home__container{
+    gap: 1rem;
 }
 
-.home__content {
-  grid-template-columns: 0.5fr 3fr;
-  align-items: center;
+.home__content{
+    grid-template-columns: .5fr 3fr;
+    align-items: center;
+}
+.home__social{
+    display: grid;
+    grid-template-columns: max-content;
+    row-gap: 1rem;
 }
 
-.home__social {
-  display: grid;
-  grid-template-columns: -webkit-max-content;
-  grid-template-columns: max-content;
-  row-gap: 1rem;
+.home__social-icon{
+    font-size: 1.25rem;
+    color: $first-color;
+
+    &:hover{
+        color: $first-color-alt;
+    }
 }
 
-.home__social-icon {
-  font-size: 1.25rem;
-  color: hsl(250deg, 69%, 61%);
-}
-.home__social-icon:hover {
-  color: hsl(250deg, 57%, 53%);
+.home__blod{
+    width: 200px;
+    fill: $first-color;
 }
 
-.home__blod {
-  width: 200px;
-  fill: hsl(250deg, 69%, 61%);
+.home__data{
+    grid-column: 1/3;
 }
 
-.home__data {
-  grid-column: 1/3;
+.home__title{
+    font-size: $big-font-size;
 }
 
-.home__title {
-  font-size: 2rem;
+.home__subtitle{
+    font-size: $h3-font-size;
+    color: $text-color;
+    font-weight: $font-medium;
+    margin-bottom: $mb-0-75;
 }
 
-.home__subtitle {
-  font-size: 1.125rem;
-  color: hsl(250deg, 8%, 45%);
-  font-weight: 500;
-  margin-bottom: 0.75rem;
+.home__description{
+    margin-bottom: $mb-2;
 }
 
-.home__description {
-  margin-bottom: 2rem;
+.home__scroll{
+    display: none;
 }
 
-.home__scroll {
-  display: none;
+.home__scroll-button{
+    color: $first-color;
+    transition: .3s;
+
+    &:hover{
+        transform: translateY(.25rem);
+    }
 }
 
-.home__scroll-button {
-  color: hsl(250deg, 69%, 61%);
-  transition: 0.3s;
-}
-.home__scroll-button:hover {
-  transform: translateY(0.25rem);
+.home__scroll-mouse{
+    font-size: 2rem;
 }
 
-.home__scroll-mouse {
-  font-size: 2rem;
+.home__scroll-name{
+    font-size: $small-font-size;
+    color: $title-color;
+    font-weight: $font-medium;
+    margin-right: $mb-0-25;
 }
 
-.home__scroll-name {
-  font-size: 0.813rem;
-  color: hsl(250deg, 8%, 15%);
-  font-weight: 500;
-  margin-right: 0.25rem;
+.home__scroll-arrow{
+    font-size: 1.25rem;
 }
 
-.home__scroll-arrow {
-  font-size: 1.25rem;
-}
 
 /*==================== BUTTONS ====================*/
-.button {
-  display: inline-block;
-  background-color: hsl(250deg, 69%, 61%);
-  color: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  font-weight: 500;
-}
-.button:hover {
-  background-color: hsl(250deg, 57%, 53%);
+.button{
+    display: inline-block;
+    background-color: $first-color;
+    color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    font-weight: $font-medium;
+
+    &:hover{
+        background-color: $first-color-alt;
+    }
 }
 
-.button__icon {
-  font-size: 1.25rem;
-  margin-left: 0.5rem;
-  transition: 0.3s;
+.button__icon{
+    font-size: 1.25rem;
+    margin-left: $mb-0-5;
+    transition: .3s;
 }
 
-.button--flex {
-  display: flex;
-  align-items: center;
+.button--flex{
+    display: flex;
+    align-items: center;
 }
-
 /*==================== ABOUT ====================*/
+
+
 /*==================== SKILLS ====================*/
+
+
 /*==================== QUALIFICATION ====================*/
+
+
 /*==================== SERVICES ====================*/
+
+
 /* Active Modal */
+
+
 /*==================== PORTFOLIO ====================*/
+
+
 /*==================== PROJECT IN MIND ====================*/
+
+
 /*==================== TESTIMONIAL ====================*/
+
+
 /*==================== CONTACT ME ====================*/
+
+
 /*==================== FOOTER ====================*/
+
+
 /*========== SCROLL UP ==========*/
+
+
 /* Show scroll */
+
+
 /*========== SCROLL BAR ==========*/
+
+
 /*==================== MEDIA QUERIES ====================*/
 /* For small devices */
+
+
 /* For medium devices */
-/* For large devices *//*# sourceMappingURL=style.css.map */
+
+
+/* For large devices */
