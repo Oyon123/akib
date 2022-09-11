@@ -1,4 +1,3 @@
-
 /*==================== MENU SHOW Y HIDDEN ====================*/
 var navMenu = document.getElementById('nav-menu'),
 navToggle = document.getElementById('nav-toggle'),
@@ -16,8 +15,22 @@ navClose.addEventListener('click', function() {
     navMenu.classList.remove('show-menu');
   })
 /* Validate if constant exists */
+// text animation
+const text = document.querySelector('.sec-text');
+function textLoad() {
+  setTimeout(() => {
+    text.textContent = 'Freelancer';
+  }, 0)
+  setTimeout(() => {
+    text.textContent = 'Desinger';
+  },4000)
+  setTimeout(() => {
+    text.textContent = 'Singer';
+  },8000)
+}
 
-
+textLoad()
+setInterval(textLoad, 12000)
 /*==================== REMOVE MENU MOBILE ====================*/
 
 
@@ -60,6 +73,5 @@ navClose.addEventListener('click', function() {
 
 
 /*==================== SHOW SCROLL UP ====================*/
-
 
 /*==================== DARK LIGHT THEME ====================*/
