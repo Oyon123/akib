@@ -81,7 +81,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #fff;
+  background-color: hsl(250deg, 60%, 99%);
   border-left: 1px solid hsl(250deg, 69%, 61%);
   -webkit-animation: animate 4s ease infinite;
           animation: animate 4s ease infinite;
