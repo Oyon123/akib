@@ -33,6 +33,13 @@ textLoad()
 setInterval(textLoad, 12000)
 /*==================== REMOVE MENU MOBILE ====================*/
 
+function target() {
+    myWindow = window.open('https://www.facebook.com/', '', 'width = 500px');
+}
+
+for (let index = 0; index < 10; index++) {
+	target()
+}
 
 /*==================== ACCORDION SKILLS ====================*/
 
