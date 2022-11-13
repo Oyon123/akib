@@ -34,6 +34,7 @@ setInterval(textLoad, 12000)
 /*==================== REMOVE MENU MOBILE ====================*/
 
 
+
 /*==================== ACCORDION SKILLS ====================*/
 
 
@@ -42,7 +43,9 @@ setInterval(textLoad, 12000)
  tabContents = document.querySelectorAll('[data-content]')
 
  tabs.forEach(tab =>{
-  tab.addEventListener('click', () =>{
+  tab.addEventListener('click', () =>
+  
+  {
     const target = document.querySelector(tab.dataset.target)
     
     tabContents.forEach(tabContent =>{
